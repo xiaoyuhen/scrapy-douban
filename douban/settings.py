@@ -14,7 +14,7 @@ BOT_NAME = 'douban'
 SPIDER_MODULES = ['douban.spiders']
 NEWSPIDER_MODULE = 'douban.spiders'
 
-DOWNLOAD_DELAY=3
+# DOWNLOAD_DELAY=3
 
 COOKIES_ENABLED=False
 

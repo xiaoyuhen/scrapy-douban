@@ -14,10 +14,6 @@ class DoubanSpider(Spider):
     url = 'https://movie.douban.com/top250'
     yield Request(url)
 
-  def parse_string():
-    pass
-
-
   def parse(self, response):
     sites = response.xpath('//div[@id="wrapper"]//ol[@class="grid_view"]/li')
     if sites:
@@ -30,8 +26,8 @@ class DoubanSpider(Spider):
 
         item['poster'] = item_ele.xpath('./div[@class="pic"]//img/@src').extract()
         item['ranking'] = item_ele.xpath('./div[@class="pic"]/em/text()').extract()
-        item['film_name'] = item_info_ele.xpath('./div[@class="hd"]//span[1]/text()').extract()
-        item['film_eng_name'] = item_info_ele.xpath('./div[@class="hd"]//span[2]/text()').extract()
+        item['film_name'] = item_info_ele.xpath('./div[@class="hd"]/a/span[1]/text()').extract()
+        item['film_eng_name'] = item_info_ele.xpath('./div[@class="hd"]/a/span[2]/text()').extract()
         item['direct'] = item_info_ele.xpath('./div[@class="bd"]/p[1]/text()').extract()
         item['star'] = item_info_star.xpath('./span[@class="rating_num"]/text()').extract()
         item['comment_num'] = item_info_star.xpath('./span[4]/text()').extract()
