@@ -4,11 +4,11 @@ from scrapy.spiders import Spider, CrawlSpider, Rule
 from scrapy.selector import Selector
 from scrapy import Request
 
-from douban.items import DoubanItem
+from douban250.items import DoubanItem
 
 
 class DoubanSpider(Spider):
-  name = 'douban'
+  name = 'douban250'
 
   def start_requests(self):
     url = 'https://movie.douban.com/top250'

@@ -21,3 +21,7 @@ class DoubanItem(Item):
     comment_num = Field()
     quote = Field()
 
+    image_urls = Field()
+    images = Field()
+    image_paths = Field()
+
