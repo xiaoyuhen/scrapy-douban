@@ -10,7 +10,7 @@ class DoubanPosterSpider(Spider):
   name = 'douban_poster'
 
   def start_requests(self):
-    url = 'https://movie.douban.com/subject/1292052/photos?start=0'
+    url = 'https://movie.douban.com/subject/25864085/photos?start=0'
     yield Request(url)
 
 
@@ -21,6 +21,7 @@ class DoubanPosterSpider(Spider):
 
         item = DoubanPosterItem()
         item_src = site.xpath('./div[@class="cover"]/a/img/@src')
+
         item['image_urls'] = item_src.extract()
         yield item
 
